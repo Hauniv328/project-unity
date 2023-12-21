@@ -1,0 +1,18 @@
+using UnityEngine;
+
+public class bullet : MonoBehaviour
+{
+    public GameObject player;
+    public GameObject bullet_;
+    void Update() {
+        fire();
+    }
+    void Start() {
+        bullet_.transform.position = new Vector2(player.transform.position.x, -3.7f);
+    }
+
+    void fire() {
+        Vector2 v = new Vector2(0, 10);
+        bullet_.transform.Translate(v * Time.deltaTime);
+    }
+}
