@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class move : MonoBehaviour
 {
-    public GameObject player; //public은 접근 지정자(모든 곳에서 접근 허용)
+    public GameObject player;
     public GameObject bullet;
 
-    void Start() { //시작시 1회 호출
+    void Start() {
         InvokeRepeating("attack", 0f, 0.5f);
     }
-    void Update() { //프레임 하나당 1회 호출(호출 = fps)
+    void Update() {
         move_();
     }
 
@@ -20,11 +20,11 @@ public class move : MonoBehaviour
 
         if(Input.GetKey(KeyCode.D)) {
             Vector2 v = new Vector2(5, 0);
-            player.transform.Translate(v * Time.deltaTime); //Time.deltatime은 fps 차이 보정
+            player.transform.Translate(v * Time.deltaTime);
         }
     }
 
     void attack() {
-        Instantiate(bullet); //오브젝트 생성 함수
+        Instantiate(bullet);
     }
 }
