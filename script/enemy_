@@ -1,0 +1,19 @@
+using UnityEngine;
+
+public class enemy : MonoBehaviour
+{
+    public GameObject enemy_;
+    public int e1;
+
+    void Update() {
+        enemy_move();
+    }
+    void Start() {
+        enemy_.transform.position = new Vector2(0, 4);
+    }
+
+    void enemy_move() {
+        Vector2 v = new Vector2(0, e1);
+        enemy_.transform.Translate(v * Time.deltaTime);
+    }
+}
